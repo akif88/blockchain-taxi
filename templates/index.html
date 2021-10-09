@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+    <title>Title</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+</head>
+  <body>
+
+
+    <main role="menu">
+         <div class="container mt-5">
+             <p>Manager Account Address: {{ manager }}</p>
+
+             {% if block !='' %}
+             <p>{{ block }}</p>
+             {% endif %}
+
+             <form method="post" class="mt-5">
+                 <select class="custom-select" name="account_list">
+                    <option selected="">Select Accounts</option>
+                     {% for nm in account %}
+                       <option value="{{ nm }}">{{ nm }}</option>
+                     {% endfor %}
+                 </select>
+                 <button type="submit" value="join" name="join" class="btn btn-block btn-primary">Join</button>
+                 <button type="submit" value="carDealer" name="join" class="btn btn-block btn-primary">Set Car Dealer</button>
+                    <br>
+                 <input type="text" name="carId" class="form-control" placeholder="CarID" aria-label="CarID" aria-describedby="addon-wrapping">
+                 <input type="text" name="price" class="form-control" placeholder="Price" aria-label="CarID" aria-describedby="addon-wrapping">
+                 <input type="text" name="validTime" class="form-control" placeholder="Valid Time" aria-label="CarID" aria-describedby="addon-wrapping">
+                 <button type="submit" value="propose" name="join" class="btn btn-block btn-primary">Car Propose to Business</button>
+
+                 <button type="submit" value="approveCar" name="join" class="btn btn-block btn-primary">Approve Car</button>
+
+                 <button type="submit" value="purchaseCar" name="join" class="btn btn-block btn-primary">Purchase Car</button>
+                 <br>
+                 <input type="text" name="recarId" class="form-control" placeholder="CarID" aria-label="CarID" aria-describedby="addon-wrapping">
+                 <input type="text" name="reprice" class="form-control" placeholder="Price" aria-label="CarID" aria-describedby="addon-wrapping">
+                 <input type="text" name="revalidTime" class="form-control" placeholder="Valid Time" aria-label="CarID" aria-describedby="addon-wrapping">
+                 <button type="submit" value="repurchaseCar" name="join" class="btn btn-block btn-primary">Repurchase Car Propose</button>
+
+                 <button type="submit" value="sellProposal" name="join" class="btn btn-block btn-primary">Sell Proposal</button>
+
+                 <br>
+                 <input type="text" name="repurchase" class="form-control" placeholder="Price" aria-label="CarID" aria-describedby="addon-wrapping">
+                 <button type="submit" value="repurchase" name="join" class="btn btn-block btn-primary">Repurchase Car</button>
+
+                 <br>
+                 <input type="text" name="salary" class="form-control" placeholder="Salary" aria-label="CarID" aria-describedby="addon-wrapping">
+                 <button type="submit" value="proposeDriver" name="join" class="btn btn-block btn-primary">Propose Driver</button>
+
+                 <button type="submit" value="approveDriver" name="join" class="btn btn-block btn-primary">Approve Driver</button>
+
+                 <button type="submit" value="setDriver" name="join" class="btn btn-block btn-primary">Set Driver</button>
+
+                 <button type="submit" value="fireDriver" name="join" class="btn btn-block btn-primary">Fire Driver</button>
+
+                 <br>
+                 <input type="text" name="charge" class="form-control" placeholder="Charge" aria-label="CarID" aria-describedby="addon-wrapping">
+                 <button type="submit" value="charge" name="join" class="btn btn-block btn-primary">Get Charge</button>
+
+                <button type="submit" value="release" name="join" class="btn btn-block btn-primary">Release Salary</button>
+                <br>
+                <input type="text" name="money" class="form-control" placeholder="Money" aria-label="CarID" aria-describedby="addon-wrapping">
+                <button type="submit" value="money" name="join" class="btn btn-block btn-primary">Get Salary</button>
+
+                 <button type="submit" value="expenses" name="join" class="btn btn-block btn-primary">Car Expenses</button>
+
+                 <button type="submit" value="dividend" name="join" class="btn btn-block btn-primary">Pay Dividend</button>
+
+                 <button type="submit" value="getDividend" name="join" class="btn btn-block btn-primary">Get Dividend</button>
+
+                 <button type="submit" value="getuser" name="join" class="btn btn-block btn-primary">Get Participant</button>
+                 <button type="submit" value="getdealer" name="join" class="btn btn-block btn-primary">Get Car Dealer</button>
+                 <button type="submit" value="getdriver" name="join" class="btn btn-block btn-primary">Get Driver</button>
+                 <br><br><br>
+
+             </form>
+
+        </div>
+    </main>
+
+ </body>
+</html>
